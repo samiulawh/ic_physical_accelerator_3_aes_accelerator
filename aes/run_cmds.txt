@@ -1,0 +1,9 @@
+iverilog -o gtkwave/sbox_sim code/sbox.v testbench/tb_sbox.v
+vvp gtkwave/sbox_sim
+
+iverilog -o gtkwave/shift_row_sim code/shift_row.v testbench/tb_shift_row.v
+vvp gtkwave/shift_row_sim
+
+iverilog -o gtkwave/aes_sim testbench/tb_main_aes.v code/*.v
+vvp gtkwave/aes_sim
+gtkwave gtkwave/aes.vcd
